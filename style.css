@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+}
+
+/*Card container*/
+.card {
+    max-width: 747px;
+    max-height: 1128px;
+    width: 260px;
+    height: 390px;
+    background: url('assets/borde.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 9px 9px;
+    border-radius: 14px;
+}
+
+.card-bg {
+    background: url('assets/Cardtexture7.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    padding: 4px;
+}
+
+/* Title */
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    height: 24px;
+    margin-top: 2px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow:
+        2px 2px 2px rgba(0, 0, 0, 0.5),
+        -2px -2px 4px rgba(255, 255, 255, 0.5);
+    padding: 4px;
+    margin: 4px;
+}
+
+.card-title .atribute {
+    background: url('assets/Dark.webp');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+}
+
+/* Rank or level */
+.content-star {
+    margin: 4px 12px;
+    display: flex;
+}
+
+.level,
+.rank {
+    display: flex;
+}
+
+.level {
+    justify-content: end;
+}
+
+.level .star {
+    width: 18px;
+    height: 18px;
+    background: url('assets/level.png');
+    background-size: cover;
+}
+
+.rank .star {
+    width: 18px;
+    height: 18px;
+    background: url('assets/rank.png');
+    background-size: cover;
+}
+
+/* Image card */
+.card-image {
+    margin: 4px 12px;
+    border: 4px solid rgba(153, 143, 143, 0.575);
+    border-radius: 4px;
+    width: 212px;
+    height: 211px;
+}
+
+.card-image img {
+    width: 100%;
+}
