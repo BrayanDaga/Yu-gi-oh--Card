@@ -1,0 +1,109 @@
+:root {
+    --bg-normal: url('assets/backgrounds/normal.webp');
+    --st-rank: url('assets/rank.png');
+    --st-level: url('assets/level.png');
+}
+
+@mixin bg-card ($typecard) {
+    background: $typecard;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+/*Card container*/
+.card {
+    width: 264px;
+    height: 390px;
+    border-radius: 14px;
+    padding: 14px;
+}
+
+.bg-normal {
+    @include bg-card(var(--bg-normal));
+}
+
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2px;
+    padding: 2px;
+
+    .atribute {
+        width: 22px;
+        height: 22px;
+
+        &.dark {
+            background: url('assets/attributes/dark.webp');
+            background-size: cover;
+        }
+    }
+}
+
+
+/* Rank or level */
+
+@mixin star($type) {
+    width: 16px;
+    height: 16px;
+    background: $type;
+    background-size: cover;
+}
+
+.content-star {
+    margin: 2px 12px 2px 11px;
+    display: flex;
+}
+
+.level,
+.rank {
+    display: flex;
+    gap: 2px;
+}
+
+.level {
+    justify-content: end;
+    .star{
+        @include star(var(--st-level))
+    }
+}
+
+.rank {
+
+    .star{
+        @include star(var(--st-rank))
+    }
+}
+
+
+/* Image card */
+.card-image {
+    border-radius: 4px;
+    width: 205px;
+    margin: 6px 6px 0 16px;
+}
+
+.card-image img {
+    width: 100%;
+}
+
+/* Description*/
+.content-description{
+    margin-top: 12px;
+}

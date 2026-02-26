@@ -1,96 +1,95 @@
+:root {
+  --bg-normal: url('assets/backgrounds/normal.webp');
+  --st-rank: url('assets/rank.png');
+  --st-level: url('assets/level.png');
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
-    display: flex;
+  margin: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 /*Card container*/
 .card {
-    max-width: 747px;
-    max-height: 1128px;
-    width: 260px;
-    height: 390px;
-    background: url('assets/borde.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 9px 9px;
-    border-radius: 14px;
+  width: 264px;
+  height: 390px;
+  border-radius: 14px;
+  padding: 14px;
 }
 
-.card-bg {
-    background: url('assets/Cardtexture7.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100%;
-    padding: 4px;
+.bg-normal {
+  background: var(--bg-normal);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* Title */
 .card-title {
-    display: flex;
-    justify-content: space-between;
-    height: 24px;
-    margin-top: 2px;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow:
-        2px 2px 2px rgba(0, 0, 0, 0.5),
-        -2px -2px 4px rgba(255, 255, 255, 0.5);
-    padding: 4px;
-    margin: 4px;
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2px;
+  padding: 2px;
 }
-
 .card-title .atribute {
-    background: url('assets/Dark.webp');
-    background-size: cover;
-    width: 20px;
-    height: 20px;
+  width: 22px;
+  height: 22px;
+}
+.card-title .atribute.dark {
+  background: url("assets/attributes/dark.webp");
+  background-size: cover;
 }
 
 /* Rank or level */
 .content-star {
-    margin: 4px 12px;
-    display: flex;
+  margin: 2px 12px 2px 11px;
+  display: flex;
 }
 
 .level,
 .rank {
-    display: flex;
+  display: flex;
+  gap: 2px;
 }
 
 .level {
-    justify-content: end;
+  justify-content: end;
 }
-
 .level .star {
-    width: 18px;
-    height: 18px;
-    background: url('assets/level.png');
-    background-size: cover;
+  width: 16px;
+  height: 16px;
+  background: var(--st-level);
+  background-size: cover;
 }
 
 .rank .star {
-    width: 18px;
-    height: 18px;
-    background: url('assets/rank.png');
-    background-size: cover;
+  width: 16px;
+  height: 16px;
+  background: var(--st-rank);
+  background-size: cover;
 }
 
 /* Image card */
 .card-image {
-    margin: 4px 12px;
-    border: 4px solid rgba(153, 143, 143, 0.575);
-    border-radius: 4px;
-    width: 212px;
-    height: 211px;
+  border-radius: 4px;
+  width: 205px;
+  margin: 6px 6px 0 16px;
 }
 
 .card-image img {
-    width: 100%;
+  width: 100%;
 }
+
+/* Description*/
+.content-description {
+  margin-top: 12px;
+}/*# sourceMappingURL=style.css.map */
