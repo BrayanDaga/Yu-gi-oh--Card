@@ -1,0 +1,13 @@
+@mixin bg-card ($typecard) {
+    background: $typecard;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@mixin star($type) {
+    width: 16px;
+    height: 16px;
+    background: $type;
+    background-size: cover;
+}

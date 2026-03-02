@@ -1,11 +1,13 @@
+/* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Lustria&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/*variables*/
 :root {
   --bg-normal: url("assets/backgrounds/normal.webp");
   --bg-effect: url("assets/backgrounds/effect.webp");
   --st-rank: url("assets/rank.png");
-  --st-level: url("assets/level.png");
+  --st-level: url("assets/star.png");
   --font-title: "Caudex";
   --font-description: "Cardo";
   --font-atkdef: "Lustria";
@@ -52,7 +54,6 @@
   display: flex;
   justify-content: space-between;
   height: 30px;
-  justify-content: space-between;
   align-items: center;
   margin: 2px;
   padding: 2px;
