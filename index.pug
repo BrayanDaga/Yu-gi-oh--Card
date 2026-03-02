@@ -4,29 +4,29 @@ mixin card(card)
         != "<!-- " + card.title.toUpperCase() + " -->"
         
         .card.bg-normal
-           // Title
-        .card-title
-            p.title-name= card.title
-            .atribute(class=card.attribute)
+            // Title
+            .card-title
+                p.title-name= card.title
+                .atribute(class=card.attribute)
 
-        // Level or Rank
-        .content-star(class=card.levelorank)
-            - var s = 1;
-                while s <= card.star
-                    .star
-                    - s++
+            // Level or Rank
+            .content-star(class=card.levelorank)
+                - var s = 1;
+                    while s <= card.star
+                        .star
+                        - s++
 
-        // Card image
-        .card-image 
-            img(src=card.img alt="")
+            // Card image
+            .card-image 
+                img(src=card.img alt="")
 
-        //Description
-        .content-description 
-            p=card.clasific
-            p.description-text=card.description
-        .atk-e-def
-            span.atk=card.atk
-            span.def=card.def
+            //Description
+            .content-description 
+                p=card.clasific
+                p.description-text=card.description
+            .atk-e-def
+                span.atk=card.atk
+                span.def=card.def
 
 - 
     var card =
