@@ -1,3 +1,38 @@
+mixin card(card)
+        - var fecha = new Date().getFullYear()
+         = '\n'
+        != "<!-- " + card.title.toUpperCase() + " -->"
+        
+        .card.bg-normal
+           // Title
+        .card-title
+            p.title-name= card.title
+            .atribute(class=card.attribute)
+
+        // Level or Rank
+        .content-star(class=card.levelorank)
+            - var s = 1;
+                while s <= card.star
+                    .star
+                    - s++
+
+        // Card image
+        .card-image 
+            img(src=card.img alt="")
+
+        //Description
+        .content-description 
+            p=card.clasific
+            p.description-text=card.description
+        .atk-e-def
+            span.atk=card.atk
+            span.def=card.def
+
+- 
+    var card =
+        { title: "Dark Magician", type: "normal", attribute: "dark", levelorank: "level", star:7, img: "https://uploads2.yugioh.com/card_images/257/detail/Dark-Magician.jpg?1375127294", "clasific": "[Spellcaster/Normal]" , description:"The ultimate wizard in terms of attack and defense.",atk:2500, def:2100 }
+    
+
 doctype html
 html(lang="en")
     head
@@ -6,35 +41,10 @@ html(lang="en")
         title Ygo Cards
         link(rel="stylesheet" href="style.css")
     body
+
         .container
-            // DARK MAGICIAN
-            .card.bg-normal
-
-                // Title
-                .card-title
-                    p.title-name Dark Magician
-                    .atribute.dark
-
-                // Level or Rank
-                .content-star.level
-                    - var s = 1;
-                        while s <= 7
-                            .star
-                            - s++
-
-                // Card image
-                .card-image 
-                    img(src="https://uploads2.yugioh.com/card_images/257/detail/Dark-Magician.jpg?1375127294" alt="Dark Magician")
-
-                //Description
-                .content-description 
-                    p [Spellcaster/Normal]
-                    p.description-text The ultimate wizard in terms of attack and defense.
-                .atk-e-def
-                    span.atk 2500
-                    span.def 2100
-            
-            //DARK MAGICIAN GIRL
+            +card(card)
+                //DARK MAGICIAN GIRL
             .card.bg-effect
 
                 // Title
@@ -86,5 +96,4 @@ html(lang="en")
                 .atk-e-def
                     span.atk 2500
                     span.def 2000
-        
-                
+
