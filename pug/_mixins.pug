@@ -21,9 +21,9 @@ mixin card(card)
                 img(src=card.img alt="")
 
             //Description
-            .content-description 
-                p=card.clasific
-                p.description-text=card.description
+            .content-description
+                p(class=card.isLongText ? 'long-text' : '')= card.clasific
+                p.description-text(class=card.isLongText ? 'long-text' : '')= card.description
             .atk-e-def
                 span.atk=card.atk
                 span.def=card.def
