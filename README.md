@@ -35,6 +35,35 @@ Per evitare errori di compilazione dei moduli Sass (partial) e mantenere la cart
 3. Salva i file (`Ctrl + S`). L'estensione genererà automaticamente i file finali nella cartella dist.
 
 ## 📁 Struttura del Progetto
+
+    ├── README.md
+    ├── dist
+    │   ├── assets
+    │   │   ├── attributes
+    │   │   │   ├── dark.webp
+    │   │   │   └── light.webp
+    │   │   ├── backgrounds
+    │   │   │   ├── effect.webp
+    │   │   │   └── normal.webp
+    │   │   ├── borde.webp
+    │   │   ├── level.png
+    │   │   └── rank.png
+    │   ├── index.html
+    │   └── style.css
+    ├── index.pug
+    ├── pug
+    │   ├── _cards-data.pug
+    │   └── _mixins.pug
+    ├── screenshot
+    │   ├── compiler.png
+    │   └── screenshoot.png
+    ├── scss
+    │   ├── _base.scss
+    │   ├── _card.scss
+    │   ├── _mixins.scss
+    │   └── _variables.scss
+    └── style.scss
+
 - `index.pug`: Struttura principale delle carte.
 - `style.scss`: File maestro che unisce tutti i moduli CSS.
 - `scss/`: Cartella contenente i moduli Sass:
@@ -42,6 +71,9 @@ Per evitare errori di compilazione dei moduli Sass (partial) e mantenere la cart
     - `_mixins.scss`: Logica riutilizzabile per stelle e sfondi.
     - `_base.scss`: Reset globale e layout del contenitore.
     - `_card.scss`: Anatomia dettagliata della carta.
+- `pug/`: Cartella contenente i moduli Pug:
+    - `_card.data.pug`:Elenco delle carte
+    - `_mixins.pug`: Logica riutilizzabile per creare elementi card.
 - `dist/`: Risultato finale. Qui troverai l' `index.html` e il `style.css` pronti per essere aperti nel browser.
 
 ## 📸 Risultato Finale
