@@ -20,10 +20,10 @@ Per evitare errori di compilazione dei moduli Sass (partial) e mantenere la cart
 
     {
         "compile-hero.disable-compile-files-on-did-save-code": false,
-        "compile-hero.sass.output-path": "dist",
-        "compile-hero.pug.output-path": "dist",
+
         "compile-hero.ignore": [
             "**/scss/**",
+            "**/pug/**",
             "**/node_modules/**",
             ".vscode"
         ]
