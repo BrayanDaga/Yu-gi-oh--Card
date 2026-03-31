@@ -1,0 +1,23 @@
+{
+  "name": "yu-gi-oh--card",
+  "version": "1.0.0",
+  "description": "Benvenuti in questo progetto di generazione di carte di Yu-Gi-Oh! creato con **Pug** e **Sass**. Questo sistema permette di creare carte fedeli all'originale in modo modulare e veloce.",
+  "homepage": "https://github.com/BrayanDaga/Yu-gi-oh--Card#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrayanDaga/Yu-gi-oh--Card.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "scripts": {
+    "watch:sass": "sass --watch scss/style.scss:css/style.css",
+    "watch:pug": "pug -w views/[!_]*.pug -o html -P",
+    "dev": "concurrently --names \"SASS,PUG\" -c \"bgBlue,bgMagenta\" \"npm run watch:sass\" \"npm run watch:pug\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.98.0"
+  }
+}

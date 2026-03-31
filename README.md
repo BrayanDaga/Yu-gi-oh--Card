@@ -1,80 +1,60 @@
-# 🎴 Yu-Gi-Oh! Card 
-Benvenuti in questo progetto di generazione di carte di Yu-Gi-Oh! creato con **Pug** e **Sass**. Questo sistema permette di creare carte fedeli all'originale in modo modulare e veloce.
+# 🎴 Yu-Gi-Oh! Card Generator
+
+Benvenuti in questo progetto di generazione di carte di Yu-Gi-Oh! creato con **Pug** e **Sass**. Questo sistema permette di creare carte fedeli all'originale in modo modulare e veloce, utilizzando strumenti di sviluppo nativi.
 
 ## 🚀 Tecnologie Utilizzate
-Il progetto sfrutta la potenza del pre-processing per mantenere il codice pulito:
-- **HTML5** (Generato tramite **Pug**)
-- **CSS3** (Generato tramite **Sass/SCSS**)
-- **Google** Fonts (Lustria, Cardo, Caudex)
-- **Compile** Hero Pro (Per l'automazione del workflow)
+Il progetto sfrutta la potenza del pre-processing per mantenere il codice pulito e organizzato:
+- **HTML5**: Generato dinamicamente tramite **Pug** (Mixin e Struttura).
+- **CSS3**: Generato tramite **Sass/SCSS** utilizzando il sistema moderno di moduli (`@use`).
+- **Concurrently**: Permette di eseguire la compilazione di Pug e Sass simultaneamente in un unico terminale.
+- **Google Fonts**: Font ufficiali (Lustria, Cardo, Caudex).
 
 ## 🛠️ Configurazione e Compilazione
-Per visualizzare correttamente il progetto e compilarlo, è necessario utilizzare l'estensione **Compile Hero**.
+Questo progetto **non dipende più da estensioni esterne** (come Compile Hero). Tutto il flusso di lavoro è gestito tramite script Node.js.
 
-### 1. Estensione Consigliata
-Scarica e installa Compile Hero dal VS Code Marketplace: 👉 https://marketplace.visualstudio.com/items?itemName=Wscats.eno 
-![hero compiler](screenshot/compiler.png)
+### 1. Prerequisiti
+È necessario avere installato [Node.js](https://nodejs.org/). Puoi verificarlo con:
+```bash
+node -v
+npm -v
+```
 
-### 2. Configurazione Importante (JSON)
-Per evitare errori di compilazione dei moduli Sass (partial) e mantenere la cartella pulita, assicurati di avere la cartella `.vscode` con il seguente file `settings.json`:
 
-    {
-        "compile-hero.disable-compile-files-on-did-save-code": false,
+###  2. Installazione
+Clona il repository e installa le dipendenze di sviluppo necessarie:
+```bash
+npm install
+```
 
-        "compile-hero.ignore": [
-            "**/scss/**",
-            "**/pug/**",
-            "**/node_modules/**",
-            ".vscode"
-        ]
-    }
-
-###  3. Come compilare
-1. Apri il progetto in VS Code.
-2. Apri i file principali: `index.pug` e `style.scss`.
-3. Salva i file (`Ctrl + S`). L'estensione genererà automaticamente i file finali nella cartella dist.
+###  3. Modalità Sviluppo (Compilazione Automatica)
+Per lavorare al progetto, esegui il seguente comando. Questo monitorerà i tuoi file e compilerà le modifiche all'istante:
+```bash
+npm run dev
+```
+Questo comando attiva Sass e Pug contemporaneamente grazie a concurrently.
 
 ## 📁 Struttura del Progetto
+L'organizzazione delle cartelle separa il codice sorgente dai file elaborati letti dal browser:
 
-    ├── README.md
-    ├── dist
-    │   ├── assets
-    │   │   ├── attributes
-    │   │   │   ├── dark.webp
-    │   │   │   └── light.webp
-    │   │   ├── backgrounds
-    │   │   │   ├── effect.webp
-    │   │   │   └── normal.webp
-    │   │   ├── borde.webp
-    │   │   ├── level.png
-    │   │   └── rank.png
-    │   ├── index.html
-    │   └── style.css
-    ├── index.pug
-    ├── pug
-    │   ├── _cards-data.pug
-    │   └── _mixins.pug
-    ├── screenshot
-    │   ├── compiler.png
-    │   └── screenshoot.png
-    ├── scss
-    │   ├── _base.scss
-    │   ├── _card.scss
-    │   ├── _mixins.scss
-    │   └── _variables.scss
-    └── style.scss
+    ├── assets/             # Immagini, sfondi e attributi originali
+    ├── css/                # CSS finale generato (style.css)
+    ├── html/               # HTML finale generato (index.html)
+    ├── scss/               # Codice sorgente Sass
+    │   ├── style.scss      # File principale (Master)
+    │   ├── base.scss       # Reset e stili globali
+    │   ├── card.scss       # Anatomia della carta
+    │   └── variables.scss  # Colori e configurazione
+    ├── views/              # Codice sorgente Pug
+    │   ├── index.pug       # Pagina principale
+    │   ├── _mixins.pug     # Componenti riutilizzabili
+    │   └── _cards-data.pug # Database delle carte
+    ├── package.json        # Script e dipendenze (Sass, Pug, Concurrently)
+    └── README.md
 
-- `index.pug`: Struttura principale delle carte.
-- `style.scss`: File maestro che unisce tutti i moduli CSS.
-- `scss/`: Cartella contenente i moduli Sass:
-    - `_variables.scss`: Colori, font e percorsi immagini.
-    - `_mixins.scss`: Logica riutilizzabile per stelle e sfondi.
-    - `_base.scss`: Reset globale e layout del contenitore.
-    - `_card.scss`: Anatomia dettagliata della carta.
-- `pug/`: Cartella contenente i moduli Pug:
-    - `_card.data.pug`:Elenco delle carte
-    - `_mixins.pug`: Logica riutilizzabile per creare elementi card.
-- `dist/`: Risultato finale. Qui troverai l' `index.html` e il `style.css` pronti per essere aperti nel browser.
+#### Note importanti:
+* Esclusioni: I file che iniziano con l'underscore (_) in views/ sono componenti che non vengono compilati come pagine singole; sono usati solo come frammenti all'interno di index.pug.
+
+* Dart Sass: Viene utilizzato @use invece di @import per una migliore gestione di variabili e mixin tra i file.
 
 ## 📸 Risultato Finale
 Ecco come appaiono le carte una volta compilate:
@@ -89,4 +69,4 @@ Un ringraziamento speciale ai contributori della Fandom Wiki per aver reso dispo
 
 ## 📂 Visualizzazione
 Per vedere il progetto finito, apri il file:
-`dist/index.html`
+`html/index.html`
