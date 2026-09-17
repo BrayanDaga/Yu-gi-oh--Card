@@ -33,6 +33,13 @@ npm run dev
 ```
 Questo comando attiva Sass e Pug contemporaneamente grazie a concurrently.
 
+### 4. Compilazione singola
+Se vuoi soltanto generare i file finali senza lasciare processi in esecuzione:
+```bash
+npm run build
+```
+Il comando genera `html/index.html` e `css/style.css`. JavaScript viene usato solo dagli strumenti di compilazione; la pagina finale funziona con HTML e CSS statici.
+
 ## 📁 Struttura del Progetto
 L'organizzazione delle cartelle separa il codice sorgente dai file elaborati letti dal browser:
 

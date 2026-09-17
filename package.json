@@ -11,13 +11,16 @@
   "author": "",
   "type": "commonjs",
   "scripts": {
+    "build:sass": "sass scss/style.scss css/style.css",
+    "build:pug": "pug views/index.pug --out html --pretty",
+    "build": "npm run build:sass && npm run build:pug",
     "watch:sass": "sass --watch scss/style.scss:css/style.css",
-    "watch:pug": "pug -w views/[!_]*.pug -o html -P",
+    "watch:pug": "pug --watch views/index.pug --out html --pretty",
     "dev": "concurrently --names \"SASS,PUG\" -c \"bgBlue,bgMagenta\" \"npm run watch:sass\" \"npm run watch:pug\""
   },
   "devDependencies": {
     "concurrently": "^9.2.1",
-    "pug-cli": "^1.0.0-alpha6",
+    "pug": "^3.0.3",
     "sass": "^1.98.0"
   }
 }
